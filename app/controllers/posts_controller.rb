@@ -3,9 +3,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.includes(:comments).all
 
-    render json: @posts
+    render json: @posts, include: 'comments'
   end
 
   # GET /posts/1
