@@ -1,0 +1,9 @@
+W, [2023-10-24T20:24:52.690413 #7]  WARN -- : You are running SQLite in production, this is generally not recommended. You can disable this warning by setting "config.active_record.sqlite3_production_warning=false".
+I, [2023-10-24T20:25:00.923072 #7]  INFO -- : [458eb0f1-929e-4c7f-92a4-391f4ff7c639] Started DELETE "/posts/132" for 172.22.0.1 at 2023-10-24 20:25:00 +0000
+I, [2023-10-24T20:25:00.924100 #7]  INFO -- : [458eb0f1-929e-4c7f-92a4-391f4ff7c639] Processing by PostsController#destroy as */*
+I, [2023-10-24T20:25:00.924166 #7]  INFO -- : [458eb0f1-929e-4c7f-92a4-391f4ff7c639]   Parameters: {"id"=>"132"}
+I, [2023-10-24T20:25:00.926548 #7]  INFO -- : [458eb0f1-929e-4c7f-92a4-391f4ff7c639] Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 1680)
+F, [2023-10-24T20:25:00.927090 #7] FATAL -- : [458eb0f1-929e-4c7f-92a4-391f4ff7c639]   
+[458eb0f1-929e-4c7f-92a4-391f4ff7c639] ActiveRecord::StatementInvalid (Could not find table 'posts'):
+[458eb0f1-929e-4c7f-92a4-391f4ff7c639]   
+[458eb0f1-929e-4c7f-92a4-391f4ff7c639] app/controllers/posts_controller.rb:44:in `set_post'

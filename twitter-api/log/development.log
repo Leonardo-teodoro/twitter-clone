@@ -1,0 +1,398 @@
+Started GET "/" for 172.22.0.1 at 2023-10-24 19:40:17 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 633)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 7134)
+
+
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20231024194804)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231024194804"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-10-24 19:50:47.452507"], ["updated_at", "2023-10-24 19:50:47.452507"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:08:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20231024200338_create_comments.rb
+
+
+):
+  
+activerecord (7.0.8) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20231024200338)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "post_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231024200338"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:08:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 5221)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:10:48 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Testando com o Francis", "body"=>"Tcc do level dev hehe", "post"=>{"title"=>"Testando com o Francis", "body"=>"Tcc do level dev hehe"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Testando com o Francis"], ["body", "Tcc do level dev hehe"], ["created_at", "2023-10-24 20:10:48.916752"], ["updated_at", "2023-10-24 20:10:48.916752"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 26ms (Views: 0.5ms | ActiveRecord: 11.0ms | Allocations: 7776)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:10:53 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 831)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:11:41 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Testando com o Léo", "body"=>"Tcczando", "post"=>{"title"=>"Testando com o Léo", "body"=>"Tcczando"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Testando com o Léo"], ["body", "Tcczando"], ["created_at", "2023-10-24 20:11:41.281346"], ["updated_at", "2023-10-24 20:11:41.281346"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 10ms (Views: 0.5ms | ActiveRecord: 5.5ms | Allocations: 1987)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:11:59 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Pão quentinho", "body"=>"Ele chorou no banho...", "post"=>{"title"=>"Pão quentinho", "body"=>"Ele chorou no banho..."}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Pão quentinho"], ["body", "Ele chorou no banho..."], ["created_at", "2023-10-24 20:11:59.401480"], ["updated_at", "2023-10-24 20:11:59.401480"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 13ms (Views: 0.5ms | ActiveRecord: 7.7ms | Allocations: 1998)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:12:02 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 992)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:12:28 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Estamos trabalhando", "body"=>"Não vou fazer isso agora", "post"=>{"title"=>"Estamos trabalhando", "body"=>"Não vou fazer isso agora"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Estamos trabalhando"], ["body", "Não vou fazer isso agora"], ["created_at", "2023-10-24 20:12:28.669025"], ["updated_at", "2023-10-24 20:12:28.669025"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 13ms (Views: 0.6ms | ActiveRecord: 8.1ms | Allocations: 1999)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:12:32 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 1108)
+
+
+Started PUT "/posts/3" for 172.22.0.1 at 2023-10-24 20:13:19 +0000
+Processing by PostsController#update as */*
+  Parameters: {"title"=>"Estamos trabalhando", "body"=>"Não vou fazer isso agora", "id"=>"3", "post"=>{"title"=>"Estamos trabalhando", "body"=>"Não vou fazer isso agora"}}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Estamos trabalhando"], ["body", "Não vou fazer isso agora"], ["updated_at", "2023-10-24 20:13:19.831564"], ["id", 3]]
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 7.1ms | Allocations: 4748)
+
+
+Started PUT "/posts/3" for 172.22.0.1 at 2023-10-24 20:13:26 +0000
+Processing by PostsController#update as */*
+  Parameters: {"title"=>"Estamos trabalhando", "body"=>"Não a fazer isso agora", "id"=>"3", "post"=>{"title"=>"Estamos trabalhando", "body"=>"Não a fazer isso agora"}}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "body" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["body", "Não a fazer isso agora"], ["updated_at", "2023-10-24 20:13:26.286300"], ["id", 3]]
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `update'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 8.5ms | Allocations: 2464)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:13:29 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1108)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:13:48 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Pão quentinho", "body"=>"Ele chorou no banho...", "post"=>{"title"=>"Pão quentinho", "body"=>"Ele chorou no banho..."}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Pão quentinho"], ["body", "Ele chorou no banho..."], ["created_at", "2023-10-24 20:13:48.413668"], ["updated_at", "2023-10-24 20:13:48.413668"]]
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `create'
+Completed 201 Created in 11ms (Views: 0.5ms | ActiveRecord: 6.4ms | Allocations: 1985)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:13:51 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1221)
+
+
+Started DELETE "/posts/3" for 172.22.0.1 at 2023-10-24 20:14:56 +0000
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:38:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/controllers/posts_controller.rb:38:in `destroy'
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/posts_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (25.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:38:in `destroy'
+Completed 204 No Content in 48ms (ActiveRecord: 26.6ms | Allocations: 10726)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:15:00 +0000
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1106)
+
+
+Started DELETE "/posts/as" for 172.22.0.1 at 2023-10-24 20:15:47 +0000
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"as"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:44:in `set_post'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 549)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=as):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started DELETE "/posts/132" for 172.22.0.1 at 2023-10-24 20:17:24 +0000
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"132"}
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 3446)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=132):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started DELETE "/posts/132" for 172.22.0.1 at 2023-10-24 20:17:49 +0000
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"132"}
+Completed 404 Not Found in 9ms (ActiveRecord: 1.1ms | Allocations: 3445)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=132):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started DELETE "/posts/132" for 172.22.0.1 at 2023-10-24 20:25:40 +0000
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"132"}
+Completed 404 Not Found in 7ms (ActiveRecord: 1.1ms | Allocations: 3446)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=132):
+  
+app/controllers/posts_controller.rb:44:in `set_post'
+Started GET "/comments" for 172.22.0.1 at 2023-10-24 20:28:55 +0000
+Processing by CommentsController#index as */*
+Completed 404 Not Found in 5ms (ActiveRecord: 0.0ms | Allocations: 2235)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/comments/1" for 172.22.0.1 at 2023-10-24 20:29:29 +0000
+Processing by CommentsController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2644)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/comments_controller.rb:44:in `set_comment'
+Started POST "/comments" for 172.22.0.1 at 2023-10-24 20:29:36 +0000
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"Eu queria testar esse comentário", "post"=>1, "comment"=>{"content"=>"Eu queria testar esse comentário"}}
+Completed 422 Unprocessable Entity in 10ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 5657)
+
+
+Started POST "/comments" for 172.22.0.1 at 2023-10-24 20:29:45 +0000
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"Eu queria testar esse comentário", "post_id"=>1, "comment"=>{"content"=>"Eu queria testar esse comentário", "post_id"=>1}}
+Completed 201 Created in 18ms (Views: 0.5ms | ActiveRecord: 8.2ms | Allocations: 4172)
+
+
+Started POST "/posts" for 172.22.0.1 at 2023-10-24 20:29:58 +0000
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"Pão quentinho", "body"=>"Ele chorou no banho...", "post"=>{"title"=>"Pão quentinho", "body"=>"Ele chorou no banho..."}}
+Completed 201 Created in 31ms (Views: 0.7ms | ActiveRecord: 28.0ms | Allocations: 897)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:30:02 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 821)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:30:50 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 7959)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:43:05 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 15847)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:43:41 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 1.1ms | Allocations: 7717)
+
+
+Started PUT "/comments/1" for 172.22.0.1 at 2023-10-24 20:44:48 +0000
+Processing by CommentsController#update as */*
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 212)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/comments_controller.rb:44:in `set_comment'
+Started PUT "/comments/1" for 172.22.0.1 at 2023-10-24 20:45:12 +0000
+Processing by CommentsController#update as */*
+  Parameters: {"id"=>"1"}
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.6ms | Allocations: 3035)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: comment):
+  
+app/controllers/comments_controller.rb:49:in `comment_params'
+app/controllers/comments_controller.rb:29:in `update'
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:46:36 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 4194)
+
+
+Started PUT "/comments/1" for 172.22.0.1 at 2023-10-24 20:47:15 +0000
+Processing by CommentsController#update as */*
+  Parameters: {"content"=>"Alterei hehe", "id"=>"1", "comment"=>{"content"=>"Alterei hehe"}}
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 39.6ms | Allocations: 5626)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:47:24 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1844)
+
+
+Started DELETE "/comments/1" for 172.22.0.1 at 2023-10-24 20:47:37 +0000
+Processing by CommentsController#destroy as */*
+  Parameters: {"id"=>"1"}
+Completed 204 No Content in 20ms (ActiveRecord: 19.2ms | Allocations: 371)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:47:40 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1307)
+
+
+Started POST "/comments" for 172.22.0.1 at 2023-10-24 20:47:47 +0000
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"Eu queria testar esse comentário", "post_id"=>1, "comment"=>{"content"=>"Eu queria testar esse comentário", "post_id"=>1}}
+Completed 201 Created in 12ms (Views: 0.6ms | ActiveRecord: 9.4ms | Allocations: 974)
+
+
+Started GET "/posts" for 172.22.0.1 at 2023-10-24 20:47:50 +0000
+Processing by PostsController#index as */*
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1417)
+
+
