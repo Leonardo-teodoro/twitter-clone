@@ -32,3 +32,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 twitter-api/tmp
+twitter-api/log
