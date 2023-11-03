@@ -1,10 +1,15 @@
 <template>
-    <div class="flex-1">
-        <button type="submit">
-            <MagnifyingGlassIcon class="h-6 text-blue-500" />
+    <div class="flex items-center group">
+        <button
+            type="submit"
+            class="bg-gray-50 h-10 rounded-l-full group-hover:bg-white group-hover:border-y-2 group-hover:border-l-2 group-hover:border-blue-400"
+        >
+            <MagnifyingGlassIcon
+                class="h-5 text-gray-600 mx-3 group-hover:text-blue-400"
+            />
         </button>
         <input
-            class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+            class="bg-gray-50 h-10 px-5 pr-16 rounded-r-full text-sm focus:outline-none group-hover:bg-white group-hover:border-y-2 group-hover:border-r-2 group-hover:border-blue-400"
             type="search"
             name="search"
             placeholder="Search"
