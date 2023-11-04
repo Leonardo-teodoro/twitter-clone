@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.includes(:comments).all
+    @posts = Post.includes(:comments).order(updated_at: :desc).all
 
     render json: @posts, include: 'comments'
   end

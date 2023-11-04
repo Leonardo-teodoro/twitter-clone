@@ -4,7 +4,7 @@ export default class Post {
     public _title: string;
     private _id: string;
     public _body: string;
-    public _comments: Comment[] | null | undefined;
+    private _comments: Comment[] | null | undefined;
     public _createdAt: string;
     private _updatedAt: string;
 
@@ -29,7 +29,7 @@ export default class Post {
     public get comments(): Comment[] | null | undefined {
         return this._comments;
     }
-    public set comments(value: Comment[]) {
+    public set comments(value: Comment[] | null | undefined) {
         this._comments = value;
     }
     public get title(): string {

@@ -1,13 +1,11 @@
 <template>
-    <div class="bg-gray-50 flex-1 px-4 py-3 rounded-2xl">
-        <p class="text-lg font-bold">What's happening</p>
-        <div v-for="post in posts" :key="post.id">
-            <div class="mx-auto max-w-7xl">
-                <article
-                    class="flex max-w-xl flex-col items-start justify-between py-4"
-                >
+    <div class="py-4 mt-4 max-w-sm rounded-lg overflow-hidden bg-gray-50">
+        <p class="px-6 text-lg font-bold">What's happening</p>
+        <div v-for="post in posts" :key="post.id" class="group">
+            <div class="mx-auto max-w-7xl group-hover:bg-gray-200 px-6 py-4">
+                <a class="">
                     {{ post.title }}
-                </article>
+                </a>
             </div>
         </div>
     </div>

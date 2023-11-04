@@ -2,6 +2,7 @@
     import ShowTrending from './components/Trending/ShowTrending.vue';
     import SearchBar from './components/Search/SearchBar.vue';
     import ShowPosts from './components/Posts/ShowPosts.vue';
+    import Sidebar from './components/Navigation/SideBar.vue';
 </script>
 
 <template>
@@ -9,12 +10,9 @@
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
     />
-    <div class="grid grid-cols-3 grid-rows-1 gap-1">
-        <nav class="my-4">
-            <router-link to="/posts">Posts</router-link>
-        </nav>
-
-        <ShowPosts />
+    <main class="grid grid-cols-3 grid-rows-1 gap-1">
+        <Sidebar />
+        <router-view />
         <div class="flex-1 mx-auto max-w-7xl my-4">
             <SearchBar class="my-4" />
             <div class="max-w-sm rounded-lg overflow-hidden bg-gray-50">
@@ -43,7 +41,7 @@
             </div>
             <ShowTrending class="my-4" />
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>

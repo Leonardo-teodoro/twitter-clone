@@ -14,4 +14,16 @@ const getPosts = async () =>
         }
         return formattedData;
     });
-export { getPosts };
+const getPost = async (id: string) => {
+    const response = await api.get(`/posts/${id}`).then(async (response) => {
+        return response.data as Post;
+    });
+    return response;
+};
+const createPost = async (params: { title: string; body: string }) => {
+    await api.post('/posts', params);
+};
+const createComment = async (params: { content: string; post_id: string }) => {
+    await api.post('/comments', params);
+};
+export { getPosts, createPost, getPost, createComment };

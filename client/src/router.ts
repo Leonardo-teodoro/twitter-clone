@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ShowPosts from '@/components/Posts/ShowPosts.vue';
+import ShowComments from '@/components/Posts/ShowComments.vue';
 const routes: Array<RouteRecordRaw> = [
     {
-        path: '/posts',
-        name: 'Posts',
+        path: '/home',
+        name: 'Home',
         component: ShowPosts,
+    },
+    {
+        path: '/posts/:id',
+        name: 'Comments',
+        component: ShowComments,
     },
 ];
 const router = createRouter({
