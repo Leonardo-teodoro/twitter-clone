@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import ShowPosts from '@/components/Posts/ShowPosts.vue';
 import ShowComments from '@/components/Posts/ShowComments.vue';
 const routes: Array<RouteRecordRaw> = [
+    { path: '/', redirect: '/home' },
     {
         path: '/home',
         name: 'Home',

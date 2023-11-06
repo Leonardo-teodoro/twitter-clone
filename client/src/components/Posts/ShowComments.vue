@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white flex-1" v-if="!loading">
-        <a
+        <article
             href="#"
             class="flex max-w-xl flex-col items-start justify-between lg:px-8 mx-auto px-6 lg:px-8 group-hover:bg-gray-100 border-y py-4"
         >
@@ -38,7 +38,7 @@
                     {{ post.created_at }}
                 </time>
             </div>
-        </a>
+        </article>
 
         <article
             v-for="comment in post.comments"
